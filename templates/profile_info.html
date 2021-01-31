@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Profile Information Page</title>
+{% endblock %}
+
+{% block body_block %}
+   <link rel="stylesheet" href="{% static 'css/style5.css' %}">
+    <div class='container'>
+        <div class='jumbotron'>
+            <h1>Displaying Your Profile Info</h1>
+            <h3>Username is: {{user.username}}</h3>
+            <h3>Email is: {{user.email}}</h3>
+            <h3>Address is: {{profile.address}}</h3>
+            <img src="{{profile.profile_pic}}" alt="No image">
+        </div>
+    </div>
+{% endblock %}
+

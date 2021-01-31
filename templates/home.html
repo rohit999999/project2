@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Home Page</title>
+{% endblock %}
+
+{% block body_block %}
+   <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    {% if username %}
+        <div class='container'>
+            <div class='jumbotron'>
+                <h1>Welcome to Home Page Mr/Ms {{username}}</h1>
+            </div>
+        </div>
+    {% else %}
+        <div class='container'>
+            <div class='jumbotron'>
+                <h1>Welcome to Home Page</h1>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Registration Page</title>
+{% endblock %}
+
+{% block body_block %}
+   <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+    {% if reg %}
+        <div class='container'>
+            <div class='jumbotron'>
+                <h1>Registration was succesfull</h1>
+            </div>
+        </div>
+    {% else %}
+        <div class='container'>
+            <div class='jumbotron'>
+                <h1>Registration Form</h1>
+                <form method="POST" enctype=multipart/form-data>
+                    {% csrf_token %}
+                    {{ userform.as_p }}
+                    {{ profileform.as_p }}
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+    {% endif %}
+{% endblock%}
